@@ -7,6 +7,16 @@
 
 import SwiftUI
 
+struct Title: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.largeTitle)
+            .padding()
+            .background(.secondary)
+            .clipShape(.rect(cornerRadius: 5))
+    }
+}
+
 struct ContentView: View {
     var motto1: some View {
         Text("One")
@@ -29,6 +39,7 @@ struct ContentView: View {
             motto3
                 .foregroundStyle(.orange)
         }
+        .modifier(Title())
     }
 }
 
