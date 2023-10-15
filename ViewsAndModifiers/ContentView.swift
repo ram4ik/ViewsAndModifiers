@@ -8,13 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var userRedText = false
+    var motto1: some View {
+        Text("One")
+    }
+        
+    var motto2: some View {
+        Text("Two")
+    }
+    
+    @ViewBuilder var motto3: some View {
+        Text("Three")
+    }
     
     var body: some View {
-        Button("Hello, World") {
-            userRedText.toggle()
+        VStack {
+            motto1
+                .foregroundStyle(.red)
+            motto2
+                .foregroundStyle(.blue)
+            motto3
+                .foregroundStyle(.orange)
         }
-        .foregroundStyle(userRedText ? .red : .blue)
     }
 }
 
